@@ -33,8 +33,8 @@ public class StringEx10_정답예시 {
 			String myWord = scan.next();
 			
 			if (myWord.equals("quit")) {
-				System.out.println("- 종료 - ");
-				break;
+				System.out.println("- 종료 - ");	//break로 끝냈는데 왜 계속 나오지??
+				break;					
 			}
 			
 			if (start.charAt(size - 1) == myWord.charAt(0)) {

@@ -1,5 +1,6 @@
 package step4_01.string;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /*
@@ -16,27 +17,29 @@ import java.util.Scanner;
  * 		{"음료", "콜라/"},
  * 		{"육류", "소고기/"}
  * 		...
+ * 
+ * 
  * } 
  */
 
 
-public class StringEx11_정답예시 {
+
+public class StringEx11_풀이 {
 
 	public static void main(String[] args) {
-
+		
 		Scanner scan = new Scanner(System.in);
 		
 		String[][] items = new String[100][2];
-		
-		for( int i = 0; i < items.length; i++) {
-			items[i][0] = "";
+		for(int i = 0; i < items.length; i++) {
+			items[i][0] = "";		//행에 				
 			items[i][1] = "";
 		}
- 		
+		int check = -1;
 		int itemCnt = 0;
-		
-		while (true) {
-			
+		String ctg = "";
+		while(true) {
+			System.out.println();
 			System.out.println("[관리자 모드]");
 			System.out.println("[1]카테고리 관리");
 			System.out.println("[2]아 이 템  관리");
@@ -46,35 +49,60 @@ public class StringEx11_정답예시 {
 			System.out.print(": ");
 			int sel = scan.nextInt();
 			
-			if (sel == 1) {
+			if (sel == 1) {	//추가 
 				System.out.print("추가할 카테고리 입력 : ");
-				String category = scan.next();
-				items[itemCnt][0] = category;
+				ctg = scan.next();
+				
+				items[itemCnt][0] = ctg;
 				itemCnt++;
+				
 			}
 			else if (sel == 2) {
-				for (int i = 0; i < itemCnt; i++) System.out.println("[" + i + "]" + items[i][0]);
-				System.out.print("카테고리를 선택하세요 : ");
-				int choice = scan.nextInt();
-				
-				System.out.print("추가할 아이템을 입력하세요 : ");
-				String item = scan.next();
-				
-				items[choice][1] += item;
-				items[choice][1] += "/";		//여기서 "/"추가함 ..-__-  
-			}
-			else if (sel == 3) {
 				for (int i = 0; i < itemCnt; i++) {
-					System.out.println(items[i][0] + " : " + items[i][1]); //이상함
+					System.out.println("[" + i + "]" + items[i][0] );
+					System.out.println();
+				}
+				
+				System.out.println("카테고리를 선택하세요 :");
+				int ctgIdx = scan.nextInt();
+					
+				for (int i = 0; i < itemCnt; i++) {
+					if (items[ctgIdx][0].equals(items[i][0])) {
+						check = 1;
+					}
+				}
+				if (check == 1) {
+					System.out.println("추가할 아이템을 입력하세요 :");
+					String addItem = scan.next();
+					items[itemCnt][1] += addItem;
+					items[itemCnt][1] += "/";
+					itemCnt++;
+				}
+				
+				System.out.println("---확인---");
+				for(int i = 0; i < itemCnt; i++) {
+					System.out.println(items[i][0] + items[i][1] );	//왜 같이 나오
 				}
 				
 			}
+			else if (sel == 3) {
+				
+				
+				
+				for (int i = 0; i < itemCnt; i++) {
+					System.out.print(items[i][0] + " : " + items[i][1] );	//왜 같이 나오
+					
+					}
+				
+			}
 			else if (sel == 4) {
-				scan.close();
 				break;
 			}
 			
 		}
+
+		scan.close();
+
 	}
 
 }
