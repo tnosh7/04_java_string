@@ -11,6 +11,9 @@ public class StringEx06_풀이 {
 		// 정답 1) 200
 		int[] arr = new int[3];
 		
+		
+		
+		
 		String[]tmp = str.split("/");
 		
 		for (int i = 0; i < tmp.length; i++) {		//확인용

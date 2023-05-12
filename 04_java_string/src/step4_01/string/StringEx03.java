@@ -95,6 +95,34 @@ public class StringEx03 {
 			System.out.print(temp[i] + " ");
 		}
 		System.out.println();
+		System.out.println();
+		
+		
+		// [6] : 문자열 비교 : compareTo()
+		
+		String strData1 = "ac" ;
+		String strData2 = "dc" ;
+		String strData3 = "ac" ;
+		
+		System.out.println(strData1.compareTo(strData2));	//왼쪽데이터(기준)이 작을 경우 음수가 반환된다. 
+		System.out.println(strData2.compareTo(strData1));	//왼쪽데이터(기준)이 클 경우 양수가 반환된다. 
+		System.out.println(strData1.compareTo(strData3));	//양쪽데이터가 같을 경우 0이 반환된다.
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 	

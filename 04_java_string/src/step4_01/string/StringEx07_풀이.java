@@ -12,9 +12,9 @@ public class StringEx07_풀이 {
 		
 		String[] name = new String[3];
 		int[] score = new int[3];
-				
 		
 		String[]temp = str.split(",");
+		System.out.print(Arrays.toString(temp) + " ");
 		
 		for (int i = 0; i < temp.length; i++) {
 			String[] temp2 = temp[i].split("/");
@@ -24,6 +24,7 @@ public class StringEx07_풀이 {
 		
 		System.out.println(Arrays.toString(name));
 		System.out.println(Arrays.toString(score));
+		
 		
 	
 		

@@ -25,7 +25,7 @@ public class StringEx09_정답예시 {
 		
 		String[] words = {"java", "mysql", "jsp", "spring"};
 		
-		// 셔플
+		// 셔플								//셔플할 때 배열로 하지 말것.
 		for (int i = 0; i < 1000; i++) {
 			int r = ran.nextInt(words.length);
 			
@@ -35,8 +35,8 @@ public class StringEx09_정답예시 {
 		}
 		
 		int idx = 0;
-		while (idx < words.length) {
-			
+		while (idx < words.length) {	//check변수 넣을 필요 없음 .
+										//나보다 완전 짧잔나ㅏㅏ..ㅜ 
 			System.out.println("[" + (idx + 1) + "] 문제 : " + words[idx]);
 			
 			System.out.print("입력 : ");
