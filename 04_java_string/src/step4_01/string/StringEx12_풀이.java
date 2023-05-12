@@ -1,5 +1,5 @@
 package step4_01.string;
-
+//23-05-12 17:10 ~ 17: 41 ~~~~~~~집  아이템 cnt까지 했음 .
 import java.util.Scanner;
 
 /*
@@ -41,6 +41,10 @@ public class StringEx12_풀이 {
 		int identifier = -1;
 		
 		int myId = 0;
+		int appleCnt = 0;
+		int banaCnt = 0;
+		int strCnt = 0;
+		
 		while(true) {
 			
 			System.out.println("[MEGA MART]");
@@ -97,6 +101,17 @@ public class StringEx12_풀이 {
 			else if (sel == 3) { //아이템 순서에 맞게 출력 + 번호 붙여서  
 				System.out.println("상품목록 \n[1]사과\n[2]바나나\n[3]딸기\n[4]뒤로가기");
 				int itemIdx= scan.nextInt();
+				
+				if (itemIdx == 1) {
+					appleCnt++;
+				}
+				else if (itemIdx == 2) {
+					banaCnt++;
+				}
+				else if (itemIdx == 3) {
+					strCnt++;
+				}
+				else continue;
 			}
 			
 			else if (sel == 4) { //3번에서 선택한것 출력 
