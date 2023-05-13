@@ -38,14 +38,14 @@ public class StringEx12_풀이 {
 		
 		String[] items = {"사과", "바나나", "딸기"};
 		
-		int identifier = -1;
+		int identifier = -1; 
 		
-		int myId = 0;
-		int appleCnt = 0;
-		int banaCnt = 0;
-		int strCnt = 0;
 		
 		while(true) {
+			String myId = "";
+			int appleCnt = 0;
+			int banaCnt = 0;
+			int strCnt = 0;
 			
 			System.out.println("[MEGA MART]");
 			System.out.println("[1]로 그 인");
@@ -72,20 +72,19 @@ public class StringEx12_풀이 {
 			
 			if		(sel == 1) { //아이디 비밀번호 체크 //로그인하면 1로 바꿈,.
 				System.out.print("ID 입력 : ");
-				myId = scan.nextInt();
+				myId = scan.next();
 				
-				if (ids.equals(myId)) {
-					System.out.print("pw 입력 : ");
-					int myPw = scan.nextInt();
-					
-					if (pws.equals(myPw)) { 
-						System.out.println(myId + "님 환영합니다.");
-						identifier = 1 ;
+				for (int i = 0; i < ids.length; i++) {
+					if (ids[i].equals(myId)) {
+						System.out.print("pw 입력 : ");
+						String myPw = scan.next();
+						if (pws[i].equals(myPw)) { 
+							System.out.println(myId + "님 환영합니다.");
+							identifier = 1 ;
+							continue;
+						}
 					}
-				}
-				else {
-					System.out.println("ID와 PW를 확인해주세요.");
-					continue;
+					else continue;
 				}
 			}
 			else if (sel == 2) { //아이디 필터 1일때 
@@ -93,37 +92,49 @@ public class StringEx12_풀이 {
 					System.out.println("로그아웃 되었습니다.");
 					continue;
 				}
-				else {
-					System.out.println("로그인 후에 사용해주세요.");
+			}
+			else if (sel == 3) { //아이템 순서에 맞게 출력 + 번호 붙여서  
+				if (identifier ==1 ) {
+					for (int i = 0; i < items.length; i++) {
+						System.out.println("[" + i + "]" + items[i]+ " ");
+					}
+					System.out.println("[4]뒤로가기");
+					int itemIdx = scan.nextInt();
+					System.out.println();
+					
+					if (itemIdx == 1) appleCnt++;
+					else if (itemIdx == 2) banaCnt++;
+					else if (itemIdx == 3) strCnt++;
+						
+					}
+				}	
+				else { 
 					continue;
 				}
 			}
-			else if (sel == 3) { //아이템 순서에 맞게 출력 + 번호 붙여서  
-				System.out.println("상품목록 \n[1]사과\n[2]바나나\n[3]딸기\n[4]뒤로가기");
-				int itemIdx= scan.nextInt();
-				
-				if (itemIdx == 1) {
-					appleCnt++;
-				}
-				else if (itemIdx == 2) {
-					banaCnt++;
-				}
-				else if (itemIdx == 3) {
-					strCnt++;
-				}
-				else continue;
-			}
 			
 			else if (sel == 4) { //3번에서 선택한것 출력 
+				if (identifier == -1) {
+					continue;
+				}
+				else {
+					System.out.print("ID : " + myId);
+					System.out.println("사과 : " + appleCnt + "개");
+					System.out.println("바나나 : " + banaCnt + "개");
+					System.out.println("딸기 : " + strCnt + "개");
 				
+				}
 			}
 			else if (sel == 0) {
 				System.out.println("프로그램 종료");
 				break;
 			}
-			
+			if (identifier == -1) { 
+				System.out.println("로그인 후에 이용해주세요.");
+				continue;
+			}
 		}
-
+		
 
 
 	}

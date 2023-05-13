@@ -46,6 +46,10 @@ public class StringEx04 {
 		System.out.println('s' + 3);
 		System.out.println((char)(65 + 10));
 		
+		char c1 = '다';
+		int a1 = c1;
+		System.out.println(a1 );
+		
 	}
 
 }
