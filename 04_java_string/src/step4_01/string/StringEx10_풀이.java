@@ -1,6 +1,5 @@
 package step4_01.string;
-//23-05-12 16:00 ~ 16:17
-import java.util.Random;
+
 import java.util.Scanner;
 
 /*
@@ -20,31 +19,31 @@ import java.util.Scanner;
 public class StringEx10_풀이 {
 
 	public static void main(String[] args) {
-		
 		Scanner scan = new Scanner(System.in);
-		Random ran = new Random();
-		
 		String start = "자전거";
-		System.out.println("제시어 : " + start);
 		
-		//문제 출력 
 		
 		while (true) {
+			
+			
+			System.out.println("제시어  :" + start);
 			System.out.print("입력 : ");
-			String answer = scan.next();
-			if (start.contentEquals(answer)) {
-				continue;
-			}
-			else {
-				System.out.println("제시어 : " + answer);
-				if (answer.equals("quit")) {
-					System.out.println("게임종료");
-					break;
+			String answer= scan.next();
+				
+			char check = start.charAt(start.length()-1);
+				
+			for (int j = 0; j < answer.length(); j++) {
+				if(check == answer.charAt(0)) {
+					start = answer;
+					continue;
 				}
 			}
+			if (answer.equals("quit")) {
+				break;
+			}
 		}
-		scan.close();
-
+		System.out.println("프로그램 종료");
+		
 	}
 
 }

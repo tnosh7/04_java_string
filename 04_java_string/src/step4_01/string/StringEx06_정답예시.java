@@ -13,12 +13,12 @@ public class StringEx06_정답예시 {
 		
 		int[] arr = new int[3];
 		
-		String[] temp = str.split("/");
+		String[] temp = str.split("/");			//주의 split은 배열 저장
 
 		int tot = 0;
-		for (int i = 0; i < temp.length; i++) {
+		for (int i = 0; i < temp.length; i++) {	
 			arr[i] = Integer.parseInt(temp[i]);
-			tot += arr[i];
+			tot += arr[i];						//같이 써도 상관없음
 		}
 		System.out.println("tot = " + tot);
 		
@@ -32,12 +32,19 @@ public class StringEx06_정답예시 {
 		
 		for (int i = 0; i < scores.length; i++) {
 			text += scores[i] + "";
-			if (i != scores.length-1) {
+			if (i != scores.length-1) {				//보충할것
 				text += "/";
 			}
 		}
 		System.out.println(text);
-
+		/*
+		 * 내가 푼 방식
+		 * for (int i = 0; i < scores.length; i++) {
+			text += scores[i] + ""  + "/";	//"" 문자로 바꾸기 . 
+			}
+		 * 
+		 * 
+		 * */
 
 
 	}

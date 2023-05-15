@@ -1,5 +1,5 @@
 package step4_01.string;
-//23-05-12 17:10 ~ 17: 41 ~~~~~~~집  아이템 cnt까지 했음 .
+
 import java.util.Scanner;
 
 /*
@@ -38,14 +38,20 @@ public class StringEx12_풀이 {
 		
 		String[] items = {"사과", "바나나", "딸기"};
 		
-		int identifier = -1; 
+		int identifier = -1;
+		int appleCnt = 0;
+		int bannaCnt = 0;
+		int berryCnt = 0;
 		
 		
 		while(true) {
-			String myId = "";
-			int appleCnt = 0;
-			int banaCnt = 0;
-			int strCnt = 0;
+			
+			int check = 0;
+			System.out.println("----------------------");
+			if (identifier == -1) System.out.println("상태 : " + "로그아웃");
+			else System.out.println("상태  : " + ids[identifier] + "로그인");	//id 인덱스 체크하기 
+			System.out.println("----------------------");
+			
 			
 			System.out.println("[MEGA MART]");
 			System.out.println("[1]로 그 인");
@@ -57,85 +63,76 @@ public class StringEx12_풀이 {
 			System.out.print("메뉴 선택 : ");
 			int sel = scan.nextInt();
 			
-			if (identifier == 1) {
-				System.out.println("------------------------------");
-				System.out.println("상태 : " + myId + "로그인");
-				System.out.println("------------------------------");
-			}
-			else {
-				System.out.println("------------------------------");
-				System.out.println("상태 : 로그아웃");
-				System.out.println("------------------------------");
-				
-			}
-			
-			
-			if		(sel == 1) { //아이디 비밀번호 체크 //로그인하면 1로 바꿈,.
-				System.out.print("ID 입력 : ");
-				myId = scan.next();
+			if		(sel == 1) {
+				System.out.print("ID : ");
+				String Id = scan.next();
 				
 				for (int i = 0; i < ids.length; i++) {
-					if (ids[i].equals(myId)) {
-						System.out.print("pw 입력 : ");
-						String myPw = scan.next();
-						if (pws[i].equals(myPw)) { 
-							System.out.println(myId + "님 환영합니다.");
-							identifier = 1 ;
-							continue;
-						}
+					if (ids[i].equals(Id)) {
+						check = 1;
+						identifier = i;
 					}
-					else continue;
 				}
-			}
-			else if (sel == 2) { //아이디 필터 1일때 
-				if (identifier == 1 ) {
-					System.out.println("로그아웃 되었습니다.");
-					continue;
-				}
-			}
-			else if (sel == 3) { //아이템 순서에 맞게 출력 + 번호 붙여서  
-				if (identifier ==1 ) {
-					for (int i = 0; i < items.length; i++) {
-						System.out.println("[" + i + "]" + items[i]+ " ");
-					}
-					System.out.println("[4]뒤로가기");
-					int itemIdx = scan.nextInt();
-					System.out.println();
+				if (check == 1) {
+					System.out.print("PW : ");
+					String Pw = scan.next();
 					
-					if (itemIdx == 1) appleCnt++;
-					else if (itemIdx == 2) banaCnt++;
-					else if (itemIdx == 3) strCnt++;
-						
+						if(pws[identifier].equals(Pw)) {
+							System.out.println(ids[identifier] + "님, 환영합니다.");
 					}
-				}	
-				else { 
-					continue;
 				}
+				else System.out.println("ID와 PW를 확인해주세요.");
 			}
-			
-			else if (sel == 4) { //3번에서 선택한것 출력 
-				if (identifier == -1) {
-					continue;
+			else if (sel == 2) {
+				if (identifier== -1) {
+					System.out.println("로그인 후에 이용가능");
 				}
 				else {
-					System.out.print("ID : " + myId);
+					System.out.println("로그아웃 되었습니다.");
+					identifier = -1;
+				}
+			}
+			else if (sel == 3) { 
+				if (identifier != -1) {
+					boolean isRun = true;
+					while (isRun) {
+						System.out.println("===상품목록===");
+						for (int i = 0; i < items.length; i++) {
+							System.out.println("["+ i + "] " + items[i]);
+						}
+						System.out.print("[3] 뒤로가기 \n상품번호를 선택하세요 : ");
+						int itemIdx = scan.nextInt();
+						
+						if (itemIdx == 0) appleCnt++;
+						else if (itemIdx == 1) bannaCnt++;
+						else if (itemIdx == 2) berryCnt++;
+						else if (itemIdx == 3) isRun = false;
+					}
+				}
+				else {
+					System.out.println("로그인 후에 이용가능");
+					continue;
+				}
+			}
+			else if (sel == 4) {
+				if (identifier != -1) {
+					System.out.println("id : " + ids[identifier]);
 					System.out.println("사과 : " + appleCnt + "개");
-					System.out.println("바나나 : " + banaCnt + "개");
-					System.out.println("딸기 : " + strCnt + "개");
-				
+					System.out.println("바나나 : " + bannaCnt + "개");
+					System.out.println("딸기 : " + berryCnt + "개");
+					continue;
+				}
+				else  {
+					System.out.println("로그인 후에 이용가능");
+					continue;
 				}
 			}
 			else if (sel == 0) {
 				System.out.println("프로그램 종료");
 				break;
 			}
-			if (identifier == -1) { 
-				System.out.println("로그인 후에 이용해주세요.");
-				continue;
-			}
 		}
-		
-
+		scan.close();
 
 	}
 

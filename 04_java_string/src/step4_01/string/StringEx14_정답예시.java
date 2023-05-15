@@ -20,12 +20,12 @@ public class StringEx14_정답예시 {
 		System.out.print("동물 이름을 입력하세요 : ");
 		String myName = scan.next();
 		
-		boolean isCorrect = false;
+		boolean isCorrect = false; //나는 정수변수 씀 . 
 		
-		if (name.length() == myName.length()) {
+		if (name.length() == myName.length()) {	//if문으로 길이부터 비교
 			isCorrect = true;
 			for (int i = 0; i < name.length(); i++) {
-				if (name.charAt(i) != myName.charAt(i)) {
+				if (name.charAt(i) != myName.charAt(i)) {	//그 다음에 한글자씩 비교
 					isCorrect = false;
 				}
 			}

@@ -24,8 +24,8 @@ public class StringEx15_정답예시 {
 		char[] charNum = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
 		
 		int correctCnt = 0;
-		for (int i = 0; i < charNum.length; i++) {
-			for (int j = 0; j < text.length(); j++) {
+		for (int i = 0; i < charNum.length; i++) {	 	//check 넘버 길이 // 설정 안하면 text길이만큼만 해서 제대로 값이 안나옴  
+			for (int j = 0; j < text.length(); j++) {	//text 길이 
 				if (charNum[i] == text.charAt(j)) {
 					correctCnt++;
 				}

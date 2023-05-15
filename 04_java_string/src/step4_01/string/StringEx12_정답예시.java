@@ -15,7 +15,7 @@ public class StringEx12_정답예시 {
 		int[][] cart = new int[100][2];
 		int itemCnt = 0;
 		int identifier = -1;
-		
+		//34번도 로그인후에 이용가능1! 
 		while (true) {
 			
 			System.out.println("-----------------------------");

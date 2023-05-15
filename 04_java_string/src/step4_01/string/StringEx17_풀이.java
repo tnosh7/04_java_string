@@ -28,6 +28,9 @@ public class StringEx17_풀이 {
 		System.out.print("변경하고 싶은 단어를 입력하세요 : ");
 		String word = scan.nextLine();
 		
+		
+		
+		
 	}
 
 }

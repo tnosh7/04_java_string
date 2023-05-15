@@ -1,6 +1,5 @@
 package step4_01.string;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 /*
@@ -32,14 +31,14 @@ public class StringEx11_풀이 {
 		
 		String[][] items = new String[100][2];
 		for(int i = 0; i < items.length; i++) {
-			items[i][0] = "";		//행에 				
+			items[i][0] = "";
 			items[i][1] = "";
 		}
-		int check = -1;
+		
 		int itemCnt = 0;
-		String ctg = "";
+		
 		while(true) {
-			System.out.println();
+
 			System.out.println("[관리자 모드]");
 			System.out.println("[1]카테고리 관리");
 			System.out.println("[2]아 이 템  관리");
@@ -49,60 +48,38 @@ public class StringEx11_풀이 {
 			System.out.print(": ");
 			int sel = scan.nextInt();
 			
-			if (sel == 1) {	//추가 
+			if (sel == 1) {
 				System.out.print("추가할 카테고리 입력 : ");
-				ctg = scan.next();
+				String category = scan.next();
 				
-				items[itemCnt][0] = ctg;
+				items[itemCnt][0] = category;				
 				itemCnt++;
-				
 			}
 			else if (sel == 2) {
-				for (int i = 0; i < itemCnt; i++) {
-					System.out.println("[" + i + "]" + items[i][0] );
-					System.out.println();
+				for (int i = 0; i < itemCnt; i++) {			//무한으로 안나오게 cnt수만큼만 출력한다.
+					System.out.println("+["+ i + "] " + items[i][0] );
 				}
+				System.out.print("카테고리를 선택하세요.");
+				int categoryIdx = scan.nextInt();			//카테고리 인덱스로 활용
+				System.out.print("추가할 아이템을 입력하세요 : ");	
+				String addItem = scan.next();
 				
-				System.out.println("카테고리를 선택하세요 :");
-				int ctgIdx = scan.nextInt();
-					
-				for (int i = 0; i < itemCnt; i++) {
-					if (items[ctgIdx][0].equals(items[i][0])) {
-						check = 1;
-					}
+				for (int i = 0; i < items.length; i++) {
+					items[categoryIdx][1] = (addItem+"/"); 	//주의; += X =으로 해야함 아니면 계속나옴
 				}
-				if (check == 1) {
-					System.out.println("추가할 아이템을 입력하세요 :");
-					String addItem = scan.next();
-					items[itemCnt][1] += addItem;
-					items[itemCnt][1] += "/";
-					itemCnt++;
-				}
-				
-				System.out.println("---확인---");
-				for(int i = 0; i < itemCnt; i++) {
-					System.out.println(items[i][0] + items[i][1] );	//왜 같이 나오
-				}
-				
 			}
 			else if (sel == 3) {
-				
-				
-				
 				for (int i = 0; i < itemCnt; i++) {
-					System.out.print(items[i][0] + " : " + items[i][1] );	//왜 같이 나오
-					
-					}
-				
+					System.out.println(items[i][0] + " : " + items[i][1]);
+				}
 			}
 			else if (sel == 4) {
 				break;
 			}
-			
 		}
 
-		scan.close();
 
+		scan.close();
 	}
 
 }

@@ -26,18 +26,18 @@ public class StringEx10_정답예시 {
 		
 		while (true) {
 			
-			int size = start.length();
+			int size = start.length();					
 			System.out.println("제시어 : " + start);
 			
 			System.out.print("입력 : ");
 			String myWord = scan.next();
 			
-			if (myWord.equals("quit")) {
-				System.out.println("- 종료 - ");	//break로 끝냈는데 왜 계속 나오지??
+			if (myWord.equals("quit")) {			
+				System.out.println("- 종료 - ");	
 				break;					
 			}
 			
-			if (start.charAt(size - 1) == myWord.charAt(0)) {
+			if (start.charAt(size - 1) == myWord.charAt(0)) {	//for문에 안넣어도 됨
 				start = myWord;
 			}
 		}

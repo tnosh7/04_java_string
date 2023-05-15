@@ -13,11 +13,11 @@ public class StringEx07_정답예시 {
 		String[] name = new String[3];
 		int[] score = new int[3];
 		
-		String[] temp1 = str.split(",");
+		String[] temp1 = str.split(","); 			//,를 기준으로 인덱스 달라짐 	
 		
-		for (int i = 0; i < temp1.length; i++) {
-			String[] temp2 = temp1[i].split("/");
-			name[i] = temp2[0];
+		for (int i = 0; i < temp1.length; i++) {		
+			String[] temp2 = temp1[i].split("/");	// /을 기준으로 앞의 값은 같은 인덱스 		
+			name[i] = temp2[0];						//	뒤의 점수가 같은 인덱스로 들어감.
 			score[i] = Integer.parseInt(temp2[1]);
 		}
 		

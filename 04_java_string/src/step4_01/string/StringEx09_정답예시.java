@@ -35,7 +35,7 @@ public class StringEx09_정답예시 {
 		}
 		
 		int idx = 0;
-		while (idx < words.length) {	//check변수 넣을 필요 없음 .
+		while (idx < words.length) {	
 										//나보다 완전 짧잔나ㅏㅏ..ㅜ 
 			System.out.println("[" + (idx + 1) + "] 문제 : " + words[idx]);
 			
