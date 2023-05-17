@@ -21,7 +21,7 @@ package step4_01.string;
 
 public class StringEx21_테스트문제 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) {//split"/"로 배열나눈뒤에 저장하기..
 				
 		String nameData = "";
 		nameData+=	"100001/한놈\n";		
