@@ -22,7 +22,7 @@ public class StringEx10_정답예시 {
 		
 		Scanner scan = new Scanner(System.in);
 		
-		String start = "자전거";
+		String start = "자전거";	//한번만 적용할 거라서 while문 밖에서 실행할것
 		
 		while (true) {
 			

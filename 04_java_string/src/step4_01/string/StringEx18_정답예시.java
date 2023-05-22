@@ -28,11 +28,11 @@ public class StringEx18_정답예시 {
 		
 		while (true) {
 			
-			int cnt = 0;
+			int cnt = 0;	//
 			
-			for (int i = 0; i < word.length(); i++) {
-				if (isChecked[i] == 0) {
-					cnt++;
+			for (int i = 0; i < word.length(); i++) {	
+				if (isChecked[i] == 0) {				
+					cnt++;					
 					break;
 				}
 			}
@@ -42,8 +42,8 @@ public class StringEx18_정답예시 {
 			
 			System.out.println("뜻 : " + meaning);
 			System.out.print("문제 : ");
-			for (int i = 0; i < word.length(); i++) {
-				if (isChecked[i] == 1) {
+			for (int i = 0; i < word.length(); i++) {	
+				if (isChecked[i] == 1) {				
 					System.out.print(word.charAt(i));
 				}
 				else {

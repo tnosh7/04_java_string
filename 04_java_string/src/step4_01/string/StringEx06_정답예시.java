@@ -31,8 +31,8 @@ public class StringEx06_정답예시 {
 		String text = "";
 		
 		for (int i = 0; i < scores.length; i++) {
-			text += scores[i] + "";
-			if (i != scores.length-1) {				//보충할것
+			text += scores[i] + "";					//문자열이라 +=를 해도 같이 붙어서 문장이 된다 . 
+			if (i != scores.length-1) {				//scores.length로 해야 함 안그럼 "/"가 마지막에 붙음
 				text += "/";
 			}
 		}

@@ -32,7 +32,7 @@ public class StringEx15_정답예시 {
 			}
 		}
 		
-		if (correctCnt == text.length()) {
+		if (correctCnt == text.length()) { //-1하지말것
 			System.out.println("숫자만 있다.");
 		}
 		else if (correctCnt == 0){

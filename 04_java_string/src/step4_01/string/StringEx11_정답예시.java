@@ -43,7 +43,7 @@ public class StringEx11_정답예시 {
 			System.out.println("[3]전체품목 출력");
 			System.out.println("[4]종료");
 			
-			System.out.print(": ");
+			System.out.print(": ");						//굳이 for문으로 안넣어도 됨 
 			int sel = scan.nextInt();
 			
 			if (sel == 1) {
@@ -60,12 +60,12 @@ public class StringEx11_정답예시 {
 				System.out.print("추가할 아이템을 입력하세요 : ");
 				String item = scan.next();
 				
-				items[choice][1] += item;
-				items[choice][1] += "/";		//여기서 "/"추가함 ..-__-  
+				items[choice][1] += item;		//+=로 해야 함 .
+				items[choice][1] += "/";		//여기서 "/"추가함
 			}
 			else if (sel == 3) {
 				for (int i = 0; i < itemCnt; i++) {
-					System.out.println(items[i][0] + " : " + items[i][1]); //이상함
+					System.out.println(items[i][0] + " : " + items[i][1]); 
 				}
 				
 			}
