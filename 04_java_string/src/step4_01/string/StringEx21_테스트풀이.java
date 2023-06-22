@@ -59,9 +59,6 @@ public class StringEx21_테스트풀이 {
 		String[] moneyTmp = moneyData.split("\n");
 		System.out.print(moneyData + " ");
 		
-		for (int i = 0; i < moneyTmp.length; i++) {
-			String[]user = moneyTmp[0];
-		}
 		
 	}
 
